@@ -44,10 +44,6 @@ prepend domain-name-servers '$LXC_ADDR';
   fi
 }
 
-modify_lxc_dhcp_range() {
-  sed -i 's/^LXC_DHCP_RANGE="10.0.3.2,10.0.3.254"$/LXC_DHCP_RANGE="10.0.3.100,10.0.3.254"/' /etc/default/lxc-net
-}
-
 use_lxc_dnsmasq_to_resolv_container_names() {
   sed -i 's/^#LXC_DOMAIN="lxc"/LXC_DOMAIN="lxc"/' /etc/default/lxc-net
 
@@ -65,7 +61,6 @@ check_distrib_release
 install_lxc
 . /etc/default/lxc-net
 use_lxc_dnsmasq_to_resolv_container_names
-modify_lxc_dhcp_range
 let_lxc_dnsmasq_to_use_dhcp_hosts_file
 
 if [ "$DISTRIB_RELEASE" = "16.04" ]; then
