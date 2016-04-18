@@ -79,7 +79,7 @@ trusty1 RUNNING 0         -      10.0.3.10 -
 
 ## Enable autostart a container
 
-Add a line `lxc.start.auto` to the /var/lib/lxc/${container_name}/config file.
+Add a line `lxc.start.auto = 1` to the /var/lib/lxc/${container_name}/config file.
 See [第25回　LXCの構築・活用 \[11\] ─lxc-autostartコマンドによるコンテナの自動起動：LXCで学ぶコンテナ入門 －軽量仮想化環境を実現する技術｜gihyo.jp … 技術評論社](http://gihyo.jp/admin/serial/01/linux_containers/0025?page=1) for more details.
 
 ## Tested version
